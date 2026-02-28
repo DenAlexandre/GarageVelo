@@ -2,7 +2,6 @@
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
     xmlns:vm="clr-namespace:GarageVelo.ViewModels"
     xmlns:models="clr-namespace:GarageVelo.Models"
     x:Class="GarageVelo.Views.GarageDetailPage"
@@ -13,14 +12,34 @@
     <ScrollView>
         <VerticalStackLayout Spacing="16" Padding="16">
 
-            <!-- Mini map -->
-            <Frame Style="{StaticResource CardFrame}" Padding="0" HeightRequest="200">
-                <maps:Map
-                    x:Name="DetailMap"
-                    IsShowingUser="False"
-                    MapType="Street"
-                    IsScrollEnabled="False"
-                    IsZoomEnabled="False" />
+            <!-- Location banner (replaces map) -->
+            <Frame Style="{StaticResource CardFrame}" Padding="20" BackgroundColor="{StaticResource Primary}">
+                <VerticalStackLayout Spacing="4" HorizontalOptions="Center">
+                    <Label
+                        Text="Localisation"
+                        TextColor="{StaticResource White}"
+                        FontSize="14"
+                        HorizontalOptions="Center" />
+                    <Label
+                        Text="{Binding Garage.Address}"
+                        TextColor="{StaticResource White}"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center" />
+                    <Label
+                        TextColor="{StaticResource Accent}"
+                        FontSize="12"
+                        HorizontalOptions="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding Garage.Latitude, StringFormat='{0:F4}'}" />
+                                <Span Text=", " />
+                                <Span Text="{Binding Garage.Longitude, StringFormat='{0:F4}'}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </VerticalStackLayout>
             </Frame>
 
             <!-- Garage info card -->

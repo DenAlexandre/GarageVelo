@@ -9,32 +9,42 @@ public class MockGarageService : IGarageService
     [
         new()
         {
-            Id = "GV-0001", Name = "Garage Bellecour", Address = "Place Bellecour, Lyon 2e",
+            Id = "GV-0001", Name = "Garage Bellecour",
+            SiteId = "SITE-001", SiteName = "Bellecour",
+            Address = "Place Bellecour, 69002 Lyon",
             Latitude = 45.7578, Longitude = 4.8320, Size = "Large",
             TotalSlots = 20, AvailableSlots = 8, LockCode = "814623"
         },
         new()
         {
-            Id = "GV-0002", Name = "Garage Part-Dieu", Address = "Gare Part-Dieu, Lyon 3e",
+            Id = "GV-0002", Name = "Garage Part-Dieu",
+            SiteId = "SITE-002", SiteName = "Part-Dieu",
+            Address = "Gare Part-Dieu, 69003 Lyon",
             Latitude = 45.7606, Longitude = 4.8602, Size = "Large",
             TotalSlots = 30, AvailableSlots = 15, LockCode = "927384"
         },
         new()
         {
-            Id = "GV-0003", Name = "Garage Confluence", Address = "Centre Confluence, Lyon 2e",
+            Id = "GV-0003", Name = "Garage Confluence",
+            SiteId = "SITE-003", SiteName = "Confluence",
+            Address = "Centre Confluence, 69002 Lyon",
             Latitude = 45.7432, Longitude = 4.8183, Size = "Medium",
             TotalSlots = 12, AvailableSlots = 5, LockCode = "536271"
         },
         new()
         {
-            Id = "GV-0004", Name = "Garage Vieux Lyon", Address = "Rue Saint-Jean, Lyon 5e",
-            Latitude = 45.7627, Longitude = 4.8271, Size = "Small",
+            Id = "GV-0004", Name = "Garage Vieux Lyon",
+            SiteId = "SITE-001", SiteName = "Bellecour",
+            Address = "Place Bellecour, 69002 Lyon",
+            Latitude = 45.7578, Longitude = 4.8320, Size = "Small",
             TotalSlots = 6, AvailableSlots = 2, LockCode = "148592"
         },
         new()
         {
-            Id = "GV-0005", Name = "Garage Tête d'Or", Address = "Parc de la Tête d'Or, Lyon 6e",
-            Latitude = 45.7750, Longitude = 4.8556, Size = "Medium",
+            Id = "GV-0005", Name = "Garage Tête d'Or",
+            SiteId = "SITE-002", SiteName = "Part-Dieu",
+            Address = "Gare Part-Dieu, 69003 Lyon",
+            Latitude = 45.7606, Longitude = 4.8602, Size = "Medium",
             TotalSlots = 10, AvailableSlots = 7, LockCode = "673810"
         }
     ];
