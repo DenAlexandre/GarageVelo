@@ -1,0 +1,45 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\GitHub\\GarageVelo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{54F3B69F-B0FB-7F6B-2F8A-2A72DD3B648D}|GarageVelo\\GarageVelo.csproj|d:\\github\\garagevelo\\garagevelo\\views\\garagedetailpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{54F3B69F-B0FB-7F6B-2F8A-2A72DD3B648D}|GarageVelo\\GarageVelo.csproj|solutionrelative:garagevelo\\views\\garagedetailpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GarageDetailPage.xaml",
+              "DocumentMoniker": "D:\\GitHub\\GarageVelo\\GarageVelo\\Views\\GarageDetailPage.xaml",
+              "RelativeDocumentMoniker": "GarageVelo\\Views\\GarageDetailPage.xaml",
+              "ToolTip": "D:\\GitHub\\GarageVelo\\GarageVelo\\Views\\GarageDetailPage.xaml",
+              "RelativeToolTip": "GarageVelo\\Views\\GarageDetailPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-28T08:33:29.654Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
