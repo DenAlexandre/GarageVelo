@@ -5,7 +5,6 @@ public class AuthenticatedHttpClientHandler : DelegatingHandler
     private readonly ISessionService _sessionService;
 
     public AuthenticatedHttpClientHandler(ISessionService sessionService)
-        : base(new HttpClientHandler())
     {
         _sessionService = sessionService;
     }

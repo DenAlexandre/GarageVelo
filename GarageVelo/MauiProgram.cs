@@ -11,8 +11,8 @@ namespace GarageVelo;
 public static class MauiProgram
 {
     // Toggle: set to true to use the real API backend, false for mock services
-    private const bool USE_API = false;
-    private const string API_BASE_URL = "https://localhost:5001";
+    private const bool USE_API = true;
+    private const string API_BASE_URL = "http://localhost:6000";
 
     public static MauiApp CreateMauiApp()
     {
@@ -20,7 +20,9 @@ public static class MauiProgram
         builder
             .UseMauiApp<App>()
             .UseMauiCommunityToolkit()
+#if !WINDOWS
             .UseMauiMaps()
+#endif
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
