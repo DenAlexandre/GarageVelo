@@ -11,6 +11,12 @@ public partial class HomeViewModel : BaseViewModel
     private readonly IGarageService _garageService;
 
     public ObservableCollection<Garage> Garages { get; } = [];
+    public ObservableCollection<Site> Sites { get; } = [];
+
+    [ObservableProperty]
+    private Site? _selectedSite;
+
+    public ObservableCollection<Garage> SiteGarages { get; } = [];
 
     // Default center: Lyon, France
     [ObservableProperty]
@@ -23,6 +29,14 @@ public partial class HomeViewModel : BaseViewModel
     {
         _garageService = garageService;
         Title = "Carte";
+    }
+
+    partial void OnSelectedSiteChanged(Site? value)
+    {
+        SiteGarages.Clear();
+        if (value is null) return;
+        foreach (var g in value.Garages)
+            SiteGarages.Add(g);
     }
 
     [RelayCommand]
@@ -38,6 +52,27 @@ public partial class HomeViewModel : BaseViewModel
             Garages.Clear();
             foreach (var g in garages)
                 Garages.Add(g);
+
+            // Group garages by SiteId to build Sites
+            Sites.Clear();
+            var grouped = garages.GroupBy(g => g.SiteId);
+            foreach (var group in grouped)
+            {
+                var first = group.First();
+                Sites.Add(new Site
+                {
+                    Id = first.SiteId,
+                    Name = first.SiteName,
+                    Address = first.Address,
+                    Latitude = first.Latitude,
+                    Longitude = first.Longitude,
+                    Garages = group.ToList()
+                });
+            }
+
+            // Select first site by default
+            if (Sites.Count > 0)
+                SelectedSite = Sites[0];
         }
         catch (Exception ex)
         {
@@ -47,6 +82,13 @@ public partial class HomeViewModel : BaseViewModel
         {
             IsBusy = false;
         }
+    }
+
+    [RelayCommand]
+    private void SelectSite(Site site)
+    {
+        if (site is null) return;
+        SelectedSite = site;
     }
 
     [RelayCommand]
