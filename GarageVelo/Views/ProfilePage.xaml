@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:GarageVelo.ViewModels"
+    x:Class="GarageVelo.Views.ProfilePage"
+    x:DataType="vm:ProfileViewModel"
+    Title="Profil"
+    BackgroundColor="{StaticResource Surface}">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="16" Padding="16">
+
+            <!-- Loading -->
+            <ActivityIndicator
+                IsRunning="{Binding IsBusy}"
+                IsVisible="{Binding IsBusy}"
+                HorizontalOptions="Center"
+                Margin="0,20,0,0" />
+
+            <!-- Profile header -->
+            <Frame Style="{StaticResource CardFrame}" Margin="0,8,0,0">
+                <VerticalStackLayout Spacing="12" HorizontalOptions="Center">
+
+                    <!-- Avatar circle -->
+                    <Frame
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        CornerRadius="40"
+                        BackgroundColor="{StaticResource Primary}"
+                        HasShadow="False"
+                        Padding="0"
+                        HorizontalOptions="Center">
+                        <Label
+                            Text="{Binding User.FirstName, StringFormat='{0:0}'}"
+                            TextColor="{StaticResource White}"
+                            FontSize="32"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center" />
+                    </Frame>
+
+                    <Label
+                        Text="{Binding User.FirstName, StringFormat='{0}'}"
+                        Style="{StaticResource TitleLabel}"
+                        FontSize="22"
+                        HorizontalOptions="Center" />
+
+                    <Label
+                        Text="{Binding User.Email}"
+                        Style="{StaticResource SubtitleLabel}"
+                        HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- User info card -->
+            <Frame Style="{StaticResource CardFrame}">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Informations" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource Primary}" />
+                    <BoxView HeightRequest="1" Color="{StaticResource Divider}" />
+
+                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="16" RowSpacing="8">
+                        <Label Grid.Row="0" Grid.Column="0" Text="Prénom" Style="{StaticResource SubtitleLabel}" />
+                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding User.FirstName}" FontAttributes="Bold" />
+
+                        <Label Grid.Row="1" Grid.Column="0" Text="Nom" Style="{StaticResource SubtitleLabel}" />
+                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding User.LastName}" FontAttributes="Bold" />
+
+                        <Label Grid.Row="2" Grid.Column="0" Text="Email" Style="{StaticResource SubtitleLabel}" />
+                        <Label Grid.Row="2" Grid.Column="1" Text="{Binding User.Email}" FontAttributes="Bold" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Active subscription card -->
+            <Frame Style="{StaticResource CardFrame}">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Abonnement" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource Primary}" />
+                    <BoxView HeightRequest="1" Color="{StaticResource Divider}" />
+
+                    <!-- No subscription -->
+                    <Label
+                        Text="Aucun abonnement actif"
+                        Style="{StaticResource SubtitleLabel}"
+                        IsVisible="{Binding HasActiveSubscription, Converter={StaticResource InvertedBoolConverter}}"
+                        HorizontalOptions="Center" />
+
+                    <!-- Active subscription -->
+                    <VerticalStackLayout IsVisible="{Binding HasActiveSubscription}" Spacing="8">
+                        <HorizontalStackLayout Spacing="8">
+                            <Label Text="Type :" Style="{StaticResource SubtitleLabel}" />
+                            <Label Text="{Binding ActiveSubscription.PlanType}" FontAttributes="Bold" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Spacing="8">
+                            <Label Text="Garage :" Style="{StaticResource SubtitleLabel}" />
+                            <Label Text="{Binding ActiveSubscription.GarageId}" FontAttributes="Bold" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Spacing="8">
+                            <Label Text="Expire le :" Style="{StaticResource SubtitleLabel}" />
+                            <Label Text="{Binding ActiveSubscription.EndDate, StringFormat='{0:dd/MM/yyyy}'}" FontAttributes="Bold" TextColor="{StaticResource Success}" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Error message -->
+            <Label
+                Text="{Binding ErrorMessage}"
+                TextColor="{StaticResource Error}"
+                IsVisible="{Binding ErrorMessage, Converter={StaticResource IsStringNotNullOrWhiteSpaceConverter}}"
+                HorizontalOptions="Center" />
+
+            <!-- Logout button -->
+            <Button
+                Text="Se déconnecter"
+                Style="{StaticResource SecondaryButton}"
+                TextColor="{StaticResource CTA}"
+                BorderColor="{StaticResource CTA}"
+                Command="{Binding LogoutCommand}"
+                Margin="0,8,0,24" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

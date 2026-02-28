@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:GarageVelo.ViewModels"
+    x:Class="GarageVelo.Views.RegisterPage"
+    x:DataType="vm:RegisterViewModel"
+    Title="Inscription"
+    BackgroundColor="{StaticResource Surface}">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="32" VerticalOptions="Center">
+
+            <Label
+                Text="Créer un compte"
+                Style="{StaticResource TitleLabel}"
+                HorizontalOptions="Center"
+                TextColor="{StaticResource Primary}" />
+
+            <Label
+                Text="Rejoignez GarageVelo"
+                Style="{StaticResource SubtitleLabel}"
+                HorizontalOptions="Center"
+                Margin="0,0,0,10" />
+
+            <!-- First name -->
+            <Frame Style="{StaticResource CardFrame}" Padding="4,0">
+                <Entry Placeholder="Prénom" Text="{Binding FirstName}" ReturnType="Next" />
+            </Frame>
+
+            <!-- Last name -->
+            <Frame Style="{StaticResource CardFrame}" Padding="4,0">
+                <Entry Placeholder="Nom" Text="{Binding LastName}" ReturnType="Next" />
+            </Frame>
+
+            <!-- Email -->
+            <Frame Style="{StaticResource CardFrame}" Padding="4,0">
+                <Entry Placeholder="Email" Text="{Binding Email}" Keyboard="Email" ReturnType="Next" />
+            </Frame>
+
+            <!-- Password -->
+            <Frame Style="{StaticResource CardFrame}" Padding="4,0">
+                <Entry Placeholder="Mot de passe" Text="{Binding Password}" IsPassword="True" ReturnType="Done" />
+            </Frame>
+
+            <!-- Error message -->
+            <Label
+                Text="{Binding ErrorMessage}"
+                TextColor="{StaticResource Error}"
+                IsVisible="{Binding ErrorMessage, Converter={StaticResource IsStringNotNullOrWhiteSpaceConverter}}"
+                HorizontalOptions="Center" />
+
+            <!-- Register button -->
+            <Button
+                Text="S'inscrire"
+                Style="{StaticResource PrimaryButton}"
+                Command="{Binding RegisterCommand}"
+                IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}" />
+
+            <ActivityIndicator
+                IsRunning="{Binding IsBusy}"
+                IsVisible="{Binding IsBusy}"
+                HorizontalOptions="Center" />
+
+            <!-- Back to login -->
+            <Label
+                Text="Retour à la connexion"
+                TextColor="{StaticResource Secondary}"
+                FontAttributes="Bold"
+                HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

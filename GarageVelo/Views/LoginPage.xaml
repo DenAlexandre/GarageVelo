@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:GarageVelo.ViewModels"
+    x:Class="GarageVelo.Views.LoginPage"
+    x:DataType="vm:LoginViewModel"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="{StaticResource Surface}">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="32" VerticalOptions="Center">
+
+            <!-- Logo / Title -->
+            <Label
+                Text="GarageVelo"
+                Style="{StaticResource TitleLabel}"
+                FontSize="36"
+                HorizontalOptions="Center"
+                TextColor="{StaticResource Primary}" />
+
+            <Label
+                Text="Location de garages à vélos"
+                Style="{StaticResource SubtitleLabel}"
+                HorizontalOptions="Center"
+                Margin="0,0,0,20" />
+
+            <!-- Email -->
+            <Frame Style="{StaticResource CardFrame}" Padding="4,0">
+                <Entry
+                    Placeholder="Email"
+                    Text="{Binding Email}"
+                    Keyboard="Email"
+                    ReturnType="Next" />
+            </Frame>
+
+            <!-- Password -->
+            <Frame Style="{StaticResource CardFrame}" Padding="4,0">
+                <Entry
+                    Placeholder="Mot de passe"
+                    Text="{Binding Password}"
+                    IsPassword="True"
+                    ReturnType="Done" />
+            </Frame>
+
+            <!-- Error message -->
+            <Label
+                Text="{Binding ErrorMessage}"
+                TextColor="{StaticResource Error}"
+                IsVisible="{Binding ErrorMessage, Converter={StaticResource IsStringNotNullOrWhiteSpaceConverter}}"
+                HorizontalOptions="Center" />
+
+            <!-- Login button -->
+            <Button
+                Text="Se connecter"
+                Style="{StaticResource PrimaryButton}"
+                Command="{Binding LoginCommand}"
+                IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}"
+                Margin="0,10,0,0" />
+
+            <ActivityIndicator
+                IsRunning="{Binding IsBusy}"
+                IsVisible="{Binding IsBusy}"
+                HorizontalOptions="Center" />
+
+            <!-- Register link -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="4">
+                <Label Text="Pas encore de compte ?" Style="{StaticResource SubtitleLabel}" />
+                <Label Text="S'inscrire" TextColor="{StaticResource Secondary}" FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoToRegisterCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+
+            <!-- Demo hint -->
+            <Frame Style="{StaticResource CardFrame}" BackgroundColor="{StaticResource Accent}" Opacity="0.7" Margin="0,20,0,0">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="Compte démo :" FontAttributes="Bold" TextColor="{StaticResource White}" />
+                    <Label Text="demo@garagevelo.fr / password123" TextColor="{StaticResource White}" FontSize="12" />
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

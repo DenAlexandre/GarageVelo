@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:GarageVelo.ViewModels"
+    x:Class="GarageVelo.Views.ScanPage"
+    x:DataType="vm:ScanViewModel"
+    Title="Scanner QR"
+    BackgroundColor="{StaticResource Surface}">
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="0">
+
+        <!-- Header -->
+        <Frame
+            Style="{StaticResource CardFrame}"
+            Margin="16,16,16,8"
+            Padding="16"
+            Grid.Row="0">
+            <VerticalStackLayout Spacing="4">
+                <Label
+                    Text="Scanner un QR Code"
+                    Style="{StaticResource TitleLabel}"
+                    FontSize="22"
+                    TextColor="{StaticResource Primary}" />
+                <Label
+                    Text="Pointez la caméra vers le QR code du garage"
+                    Style="{StaticResource SubtitleLabel}" />
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Camera / Scanner area -->
+        <Frame
+            Grid.Row="1"
+            CornerRadius="16"
+            Margin="16,8"
+            Padding="0"
+            BackgroundColor="{StaticResource Gray900}"
+            HasShadow="True">
+            <Grid>
+                <!-- Placeholder for ZXing scanner -->
+                <Label
+                    Text="Camera QR Scanner"
+                    TextColor="{StaticResource White}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    FontSize="18"
+                    IsVisible="{Binding IsScanning}" />
+
+                <!-- Scan result overlay -->
+                <VerticalStackLayout
+                    IsVisible="{Binding IsScanning, Converter={StaticResource InvertedBoolConverter}}"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Spacing="16"
+                    Padding="24">
+                    <Label
+                        Text="QR Code détecté !"
+                        TextColor="{StaticResource Success}"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center" />
+                    <ActivityIndicator
+                        IsRunning="{Binding IsBusy}"
+                        IsVisible="{Binding IsBusy}"
+                        Color="{StaticResource White}" />
+                </VerticalStackLayout>
+            </Grid>
+        </Frame>
+
+        <!-- Bottom actions -->
+        <VerticalStackLayout Grid.Row="2" Spacing="12" Padding="16,8,16,16">
+
+            <!-- Error message -->
+            <Label
+                Text="{Binding ErrorMessage}"
+                TextColor="{StaticResource Error}"
+                IsVisible="{Binding ErrorMessage, Converter={StaticResource IsStringNotNullOrWhiteSpaceConverter}}"
+                HorizontalOptions="Center" />
+
+            <!-- Manual entry for testing -->
+            <Button
+                x:Name="DemoScanButton"
+                Text="Simuler scan (démo)"
+                Style="{StaticResource SecondaryButton}"
+                Command="{Binding ProcessQrCodeCommand}" />
+
+            <Button
+                Text="Réinitialiser"
+                Style="{StaticResource SecondaryButton}"
+                Command="{Binding ResetScannerCommand}"
+                IsVisible="{Binding IsScanning, Converter={StaticResource InvertedBoolConverter}}" />
+        </VerticalStackLayout>
+
+    </Grid>
+</ContentPage>

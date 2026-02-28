@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="GarageVelo.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:GarageVelo.Views"
+    Title="GarageVelo"
+    FlyoutBehavior="Disabled">
+
+    <!-- Login / Register (no tabs) -->
+    <ShellContent
+        Route="login"
+        ContentTemplate="{DataTemplate views:LoginPage}"
+        Shell.TabBarIsVisible="False"
+        Shell.NavBarIsVisible="False" />
+
+    <!-- Main TabBar -->
+    <TabBar Route="main">
+        <ShellContent
+            Title="Scanner"
+            Icon="{OnPlatform Default='camera_icon.png'}"
+            ContentTemplate="{DataTemplate views:ScanPage}"
+            Route="scan" />
+
+        <ShellContent
+            Title="Carte"
+            Icon="{OnPlatform Default='map_icon.png'}"
+            ContentTemplate="{DataTemplate views:HomePage}"
+            Route="home" />
+
+        <ShellContent
+            Title="Profil"
+            Icon="{OnPlatform Default='profile_icon.png'}"
+            ContentTemplate="{DataTemplate views:ProfilePage}"
+            Route="profile" />
+    </TabBar>
+
+</Shell>

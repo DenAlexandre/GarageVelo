@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:GarageVelo.ViewModels"
+    xmlns:models="clr-namespace:GarageVelo.Models"
+    x:Class="GarageVelo.Views.SubscriptionPage"
+    x:DataType="vm:SubscriptionViewModel"
+    Title="Abonnement"
+    BackgroundColor="{StaticResource Surface}">
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="16">
+
+        <!-- Header -->
+        <VerticalStackLayout Grid.Row="0" Spacing="4" Margin="0,8,0,16">
+            <Label
+                Text="Choisir un abonnement"
+                Style="{StaticResource TitleLabel}"
+                FontSize="24"
+                TextColor="{StaticResource Primary}" />
+            <Label
+                Text="Sélectionnez la durée qui vous convient"
+                Style="{StaticResource SubtitleLabel}" />
+        </VerticalStackLayout>
+
+        <!-- Plans list -->
+        <CollectionView
+            Grid.Row="1"
+            ItemsSource="{Binding Plans}"
+            SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:SubscriptionPlan">
+                    <Frame
+                        Style="{StaticResource CardFrame}"
+                        Margin="0,6"
+                        Padding="20">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:SubscriptionViewModel}}, Path=SelectPlanCommand}"
+                                CommandParameter="{Binding .}" />
+                        </Frame.GestureRecognizers>
+                        <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
+                            <Label
+                                Grid.Row="0" Grid.Column="0"
+                                Text="{Binding Name}"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource Primary}" />
+                            <Label
+                                Grid.Row="0" Grid.Column="1"
+                                Text="{Binding Price, StringFormat='{0:C}'}"
+                                FontSize="24"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource CTA}" />
+                            <Label
+                                Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                Text="{Binding Description}"
+                                Style="{StaticResource SubtitleLabel}"
+                                Margin="0,4,0,0" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Bottom section -->
+        <VerticalStackLayout Grid.Row="2" Spacing="12" Margin="0,8,0,0">
+
+            <!-- Selected plan display -->
+            <Frame
+                Style="{StaticResource CardFrame}"
+                BackgroundColor="{StaticResource Accent}"
+                IsVisible="{Binding SelectedPlan, Converter={StaticResource IsNotNullConverter}}"
+                Padding="16">
+                <HorizontalStackLayout Spacing="8">
+                    <Label Text="Plan sélectionné :" TextColor="{StaticResource White}" FontAttributes="Bold" />
+                    <Label Text="{Binding SelectedPlan.Name}" TextColor="{StaticResource White}" />
+                    <Label Text="{Binding SelectedPlan.Price, StringFormat='- {0:C}'}" TextColor="{StaticResource White}" FontAttributes="Bold" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <!-- Error -->
+            <Label
+                Text="{Binding ErrorMessage}"
+                TextColor="{StaticResource Error}"
+                IsVisible="{Binding ErrorMessage, Converter={StaticResource IsStringNotNullOrWhiteSpaceConverter}}"
+                HorizontalOptions="Center" />
+
+            <!-- Payment processing -->
+            <VerticalStackLayout IsVisible="{Binding IsProcessingPayment}" Spacing="8" HorizontalOptions="Center">
+                <ActivityIndicator IsRunning="True" />
+                <Label Text="Traitement du paiement..." Style="{StaticResource SubtitleLabel}" HorizontalOptions="Center" />
+            </VerticalStackLayout>
+
+            <!-- Success message -->
+            <Frame
+                Style="{StaticResource CardFrame}"
+                BackgroundColor="{StaticResource Success}"
+                IsVisible="{Binding PaymentSuccess}"
+                Padding="16">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Paiement réussi !" TextColor="{StaticResource White}" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Text="{Binding SuccessMessage}" TextColor="{StaticResource White}" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Confirm button -->
+            <Button
+                Text="Confirmer le paiement"
+                Style="{StaticResource CTAButton}"
+                Command="{Binding ConfirmPaymentCommand}"
+                IsVisible="{Binding PaymentSuccess, Converter={StaticResource InvertedBoolConverter}}" />
+
+            <!-- Back button after success -->
+            <Button
+                Text="Retour"
+                Style="{StaticResource PrimaryButton}"
+                Command="{Binding GoBackCommand}"
+                IsVisible="{Binding PaymentSuccess}" />
+        </VerticalStackLayout>
+
+    </Grid>
+</ContentPage>

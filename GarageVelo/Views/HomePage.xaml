@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+    xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
+    xmlns:vm="clr-namespace:GarageVelo.ViewModels"
+    x:Class="GarageVelo.Views.HomePage"
+    x:DataType="vm:HomeViewModel"
+    Title="Carte"
+    BackgroundColor="{StaticResource Surface}">
+
+    <Grid>
+        <!-- Map full screen -->
+        <maps:Map
+            x:Name="GarageMap"
+            IsShowingUser="True"
+            MapType="Street">
+            <maps:Map.MapElements>
+            </maps:Map.MapElements>
+        </maps:Map>
+
+        <!-- Floating header -->
+        <Frame
+            Style="{StaticResource CardFrame}"
+            VerticalOptions="Start"
+            Margin="16,16,16,0"
+            Padding="12">
+            <HorizontalStackLayout Spacing="8">
+                <Label
+                    Text="GarageVelo"
+                    Style="{StaticResource TitleLabel}"
+                    FontSize="20"
+                    VerticalOptions="Center"
+                    TextColor="{StaticResource Primary}" />
+                <Label
+                    Text="Lyon"
+                    Style="{StaticResource SubtitleLabel}"
+                    VerticalOptions="Center" />
+            </HorizontalStackLayout>
+        </Frame>
+
+        <!-- Loading indicator -->
+        <ActivityIndicator
+            IsRunning="{Binding IsBusy}"
+            IsVisible="{Binding IsBusy}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center" />
+
+        <!-- Garage list at bottom -->
+        <Frame
+            Style="{StaticResource CardFrame}"
+            VerticalOptions="End"
+            Margin="16,0,16,16"
+            Padding="8"
+            MaximumHeightRequest="200">
+            <CollectionView
+                ItemsSource="{Binding Garages}"
+                SelectionMode="Single"
+                SelectionChangedCommand="{Binding SelectGarageCommand}"
+                SelectionChangedCommandParameter="{Binding SelectedItem, Source={RelativeSource Self}}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="x:String">
+                        <Frame Style="{StaticResource CardFrame}" Margin="4" Padding="12">
+                            <VerticalStackLayout Spacing="4">
+                                <Label FontAttributes="Bold" FontSize="14" />
+                                <Label FontSize="12" TextColor="{StaticResource TextSecondary}" />
+                                <HorizontalStackLayout Spacing="8">
+                                    <Label FontSize="11" TextColor="{StaticResource Success}" />
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Frame>
+    </Grid>
+</ContentPage>
