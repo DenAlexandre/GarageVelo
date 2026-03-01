@@ -12,7 +12,7 @@ public static class MauiProgram
 {
     // Toggle: set to true to use the real API backend, false for mock services
     private const bool USE_API = true;
-    private const string API_BASE_URL = "http://192.168.1.36:5000";
+    private const string API_BASE_URL = "http://localhost:5000";
 
     public static MauiApp CreateMauiApp()
     {

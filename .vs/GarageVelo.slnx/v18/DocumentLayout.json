@@ -50,8 +50,16 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -75,16 +83,7 @@
               "RelativeToolTip": "GarageVelo\\App.xaml.cs",
               "ViewState": "AgIAACsAAAAAAAAAAADwvzUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-01T08:58:35.616Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+              "WhenOpened": "2026-03-01T08:58:35.616Z"
             },
             {
               "$type": "Document",
@@ -96,8 +95,7 @@
               "RelativeToolTip": "GarageVelo\\MauiProgram.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-01T08:58:19.669Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-01T08:58:19.669Z"
             },
             {
               "$type": "Document",
@@ -109,8 +107,7 @@
               "RelativeToolTip": "GarageVelo\\App.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-01T08:58:14.974Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-01T08:58:14.974Z"
             },
             {
               "$type": "Document",
@@ -122,8 +119,7 @@
               "RelativeToolTip": "GarageVelo\\Services\\Api\\ApiGarageService.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAQwB8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-01T08:13:06.858Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-01T08:13:06.858Z"
             },
             {
               "$type": "Document",
@@ -135,8 +131,7 @@
               "RelativeToolTip": "GarageVelo\\Services\\Api\\ApiAuthService.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAowDEAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-01T08:12:38.932Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-01T08:12:38.932Z"
             },
             {
               "$type": "Document",
@@ -148,8 +143,7 @@
               "RelativeToolTip": "GarageVelo.Api\\Data\\TestDataSeeder.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAgwB4AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-01T08:09:28.641Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-01T08:09:28.641Z"
             },
             {
               "$type": "Document",
@@ -161,8 +155,7 @@
               "RelativeToolTip": "GarageVelo.Api\\Data\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-01T08:09:26.851Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-01T08:09:26.851Z"
             },
             {
               "$type": "Document",
@@ -174,8 +167,7 @@
               "RelativeToolTip": "GarageVelo.Api\\Migrations\\20260228100634_InitialCreate.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAArwA8AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-01T08:09:02.067Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-01T08:09:02.067Z"
             },
             {
               "$type": "Document",
@@ -187,8 +179,7 @@
               "RelativeToolTip": "GarageVelo\\Views\\GarageDetailPage.xaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-28T08:33:29.654Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-28T08:33:29.654Z"
             }
           ]
         }
