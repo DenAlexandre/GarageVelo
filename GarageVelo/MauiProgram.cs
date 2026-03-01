@@ -12,7 +12,7 @@ public static class MauiProgram
 {
     // Toggle: set to true to use the real API backend, false for mock services
     private const bool USE_API = true;
-    private const string API_BASE_URL = "http://localhost:6000";
+    private const string API_BASE_URL = "http://192.168.1.36:5000";
 
     public static MauiApp CreateMauiApp()
     {
@@ -20,9 +20,8 @@ public static class MauiProgram
         builder
             .UseMauiApp<App>()
             .UseMauiCommunityToolkit()
-#if !WINDOWS
-            .UseMauiMaps()
-#endif
+            // Maps disabled: requires Google Maps API key in AndroidManifest.xml
+            // .UseMauiMaps()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -38,7 +37,8 @@ public static class MauiProgram
             builder.Services.AddTransient<AuthenticatedHttpClientHandler>();
             builder.Services.AddHttpClient("GarageVeloApi", client =>
             {
-                client.BaseAddress = new Uri(API_BASE_URL);
+                var url = Preferences.Get("api_base_url", API_BASE_URL);
+                client.BaseAddress = new Uri(url);
             }).AddHttpMessageHandler<AuthenticatedHttpClientHandler>();
 
             // API service implementations

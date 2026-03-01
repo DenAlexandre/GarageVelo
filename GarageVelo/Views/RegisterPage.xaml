@@ -40,7 +40,23 @@
 
             <!-- Password -->
             <Frame Style="{StaticResource CardFrame}" Padding="4,0">
-                <Entry Placeholder="Mot de passe" Text="{Binding Password}" IsPassword="True" ReturnType="Done" />
+                <Grid ColumnDefinitions="*,Auto">
+                    <Entry
+                        x:Name="PasswordEntry"
+                        Placeholder="Mot de passe"
+                        Text="{Binding Password}"
+                        IsPassword="True"
+                        ReturnType="Done"
+                        Grid.Column="0" />
+                    <ImageButton
+                        Grid.Column="1"
+                        Source="eye_icon.png"
+                        WidthRequest="24"
+                        HeightRequest="24"
+                        Margin="0,0,8,0"
+                        BackgroundColor="Transparent"
+                        Clicked="OnTogglePasswordClicked" />
+                </Grid>
             </Frame>
 
             <!-- Error message -->

@@ -18,6 +18,8 @@ public partial class LoginViewModel : BaseViewModel
     {
         _authService = authService;
         Title = "Connexion";
+        Email = "demo@garagevelo.fr";
+        Password = "password123";
     }
 
     [RelayCommand]

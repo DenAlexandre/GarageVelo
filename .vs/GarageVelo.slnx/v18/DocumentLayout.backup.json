@@ -1,7 +1,48 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\GitHub\\GarageVelo\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{54F3B69F-B0FB-7F6B-2F8A-2A72DD3B648D}|GarageVelo\\GarageVelo.csproj|d:\\github\\garagevelo\\garagevelo\\views\\serverconfigpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54F3B69F-B0FB-7F6B-2F8A-2A72DD3B648D}|GarageVelo\\GarageVelo.csproj|solutionrelative:garagevelo\\views\\serverconfigpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54F3B69F-B0FB-7F6B-2F8A-2A72DD3B648D}|GarageVelo\\GarageVelo.csproj|d:\\github\\garagevelo\\garagevelo\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54F3B69F-B0FB-7F6B-2F8A-2A72DD3B648D}|GarageVelo\\GarageVelo.csproj|solutionrelative:garagevelo\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54F3B69F-B0FB-7F6B-2F8A-2A72DD3B648D}|GarageVelo\\GarageVelo.csproj|d:\\github\\garagevelo\\garagevelo\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54F3B69F-B0FB-7F6B-2F8A-2A72DD3B648D}|GarageVelo\\GarageVelo.csproj|solutionrelative:garagevelo\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54F3B69F-B0FB-7F6B-2F8A-2A72DD3B648D}|GarageVelo\\GarageVelo.csproj|d:\\github\\garagevelo\\garagevelo\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{54F3B69F-B0FB-7F6B-2F8A-2A72DD3B648D}|GarageVelo\\GarageVelo.csproj|solutionrelative:garagevelo\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54F3B69F-B0FB-7F6B-2F8A-2A72DD3B648D}|GarageVelo\\GarageVelo.csproj|d:\\github\\garagevelo\\garagevelo\\services\\api\\apigarageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54F3B69F-B0FB-7F6B-2F8A-2A72DD3B648D}|GarageVelo\\GarageVelo.csproj|solutionrelative:garagevelo\\services\\api\\apigarageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54F3B69F-B0FB-7F6B-2F8A-2A72DD3B648D}|GarageVelo\\GarageVelo.csproj|d:\\github\\garagevelo\\garagevelo\\services\\api\\apiauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54F3B69F-B0FB-7F6B-2F8A-2A72DD3B648D}|GarageVelo\\GarageVelo.csproj|solutionrelative:garagevelo\\services\\api\\apiauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14F4DD7A-3752-AB3F-69CA-9CED90A8354B}|GarageVelo.Api\\GarageVelo.Api.csproj|d:\\github\\garagevelo\\garagevelo.api\\data\\testdataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14F4DD7A-3752-AB3F-69CA-9CED90A8354B}|GarageVelo.Api\\GarageVelo.Api.csproj|solutionrelative:garagevelo.api\\data\\testdataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14F4DD7A-3752-AB3F-69CA-9CED90A8354B}|GarageVelo.Api\\GarageVelo.Api.csproj|d:\\github\\garagevelo\\garagevelo.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14F4DD7A-3752-AB3F-69CA-9CED90A8354B}|GarageVelo.Api\\GarageVelo.Api.csproj|solutionrelative:garagevelo.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14F4DD7A-3752-AB3F-69CA-9CED90A8354B}|GarageVelo.Api\\GarageVelo.Api.csproj|d:\\github\\garagevelo\\garagevelo.api\\migrations\\20260228100634_initialcreate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14F4DD7A-3752-AB3F-69CA-9CED90A8354B}|GarageVelo.Api\\GarageVelo.Api.csproj|solutionrelative:garagevelo.api\\migrations\\20260228100634_initialcreate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54F3B69F-B0FB-7F6B-2F8A-2A72DD3B648D}|GarageVelo\\GarageVelo.csproj|d:\\github\\garagevelo\\garagevelo\\views\\garagedetailpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{54F3B69F-B0FB-7F6B-2F8A-2A72DD3B648D}|GarageVelo\\GarageVelo.csproj|solutionrelative:garagevelo\\views\\garagedetailpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +50,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ServerConfigPage.xaml.cs",
+              "DocumentMoniker": "D:\\GitHub\\GarageVelo\\GarageVelo\\Views\\ServerConfigPage.xaml.cs",
+              "RelativeDocumentMoniker": "GarageVelo\\Views\\ServerConfigPage.xaml.cs",
+              "ToolTip": "D:\\GitHub\\GarageVelo\\GarageVelo\\Views\\ServerConfigPage.xaml.cs",
+              "RelativeToolTip": "GarageVelo\\Views\\ServerConfigPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T08:58:41.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "D:\\GitHub\\GarageVelo\\GarageVelo\\App.xaml.cs",
+              "RelativeDocumentMoniker": "GarageVelo\\App.xaml.cs",
+              "ToolTip": "D:\\GitHub\\GarageVelo\\GarageVelo\\App.xaml.cs",
+              "RelativeToolTip": "GarageVelo\\App.xaml.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAADwvzUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T08:58:35.616Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
@@ -18,6 +85,110 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "D:\\GitHub\\GarageVelo\\GarageVelo\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "GarageVelo\\MauiProgram.cs",
+              "ToolTip": "D:\\GitHub\\GarageVelo\\GarageVelo\\MauiProgram.cs",
+              "RelativeToolTip": "GarageVelo\\MauiProgram.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T08:58:19.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\GitHub\\GarageVelo\\GarageVelo\\App.xaml",
+              "RelativeDocumentMoniker": "GarageVelo\\App.xaml",
+              "ToolTip": "D:\\GitHub\\GarageVelo\\GarageVelo\\App.xaml",
+              "RelativeToolTip": "GarageVelo\\App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-01T08:58:14.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApiGarageService.cs",
+              "DocumentMoniker": "D:\\GitHub\\GarageVelo\\GarageVelo\\Services\\Api\\ApiGarageService.cs",
+              "RelativeDocumentMoniker": "GarageVelo\\Services\\Api\\ApiGarageService.cs",
+              "ToolTip": "D:\\GitHub\\GarageVelo\\GarageVelo\\Services\\Api\\ApiGarageService.cs",
+              "RelativeToolTip": "GarageVelo\\Services\\Api\\ApiGarageService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwB8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T08:13:06.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApiAuthService.cs",
+              "DocumentMoniker": "D:\\GitHub\\GarageVelo\\GarageVelo\\Services\\Api\\ApiAuthService.cs",
+              "RelativeDocumentMoniker": "GarageVelo\\Services\\Api\\ApiAuthService.cs",
+              "ToolTip": "D:\\GitHub\\GarageVelo\\GarageVelo\\Services\\Api\\ApiAuthService.cs",
+              "RelativeToolTip": "GarageVelo\\Services\\Api\\ApiAuthService.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowDEAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T08:12:38.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TestDataSeeder.cs",
+              "DocumentMoniker": "D:\\GitHub\\GarageVelo\\GarageVelo.Api\\Data\\TestDataSeeder.cs",
+              "RelativeDocumentMoniker": "GarageVelo.Api\\Data\\TestDataSeeder.cs",
+              "ToolTip": "D:\\GitHub\\GarageVelo\\GarageVelo.Api\\Data\\TestDataSeeder.cs",
+              "RelativeToolTip": "GarageVelo.Api\\Data\\TestDataSeeder.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwB4AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T08:09:28.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\GitHub\\GarageVelo\\GarageVelo.Api\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "GarageVelo.Api\\Data\\AppDbContext.cs",
+              "ToolTip": "D:\\GitHub\\GarageVelo\\GarageVelo.Api\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "GarageVelo.Api\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T08:09:26.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20260228100634_InitialCreate.Designer.cs",
+              "DocumentMoniker": "D:\\GitHub\\GarageVelo\\GarageVelo.Api\\Migrations\\20260228100634_InitialCreate.Designer.cs",
+              "RelativeDocumentMoniker": "GarageVelo.Api\\Migrations\\20260228100634_InitialCreate.Designer.cs",
+              "ToolTip": "D:\\GitHub\\GarageVelo\\GarageVelo.Api\\Migrations\\20260228100634_InitialCreate.Designer.cs",
+              "RelativeToolTip": "GarageVelo.Api\\Migrations\\20260228100634_InitialCreate.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAArwA8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T08:09:02.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GarageDetailPage.xaml",
+              "DocumentMoniker": "D:\\GitHub\\GarageVelo\\GarageVelo\\Views\\GarageDetailPage.xaml",
+              "RelativeDocumentMoniker": "GarageVelo\\Views\\GarageDetailPage.xaml",
+              "ToolTip": "D:\\GitHub\\GarageVelo\\GarageVelo\\Views\\GarageDetailPage.xaml",
+              "RelativeToolTip": "GarageVelo\\Views\\GarageDetailPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-28T08:33:29.654Z",
+              "EditorCaption": ""
             }
           ]
         }

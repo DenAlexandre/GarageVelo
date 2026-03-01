@@ -9,4 +9,9 @@ public partial class RegisterPage : ContentPage
         InitializeComponent();
         BindingContext = viewModel;
     }
+
+    private void OnTogglePasswordClicked(object? sender, EventArgs e)
+    {
+        PasswordEntry.IsPassword = !PasswordEntry.IsPassword;
+    }
 }

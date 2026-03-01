@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GarageVelo.Views.ServerConfigPage"
+    Title="Configuration serveur"
+    BackgroundColor="{StaticResource Surface}"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
+
+    <Grid RowDefinitions="*,Auto" Padding="24">
+
+        <VerticalStackLayout
+            Grid.Row="0"
+            VerticalOptions="Center"
+            Spacing="16">
+
+            <!-- Icon / Title -->
+            <Label
+                Text="Serveur indisponible"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="{StaticResource Error}" />
+
+            <Label
+                Text="Impossible de contacter le serveur GarageVelo. Configurez l'adresse de l'API ci-dessous."
+                FontSize="14"
+                HorizontalTextAlignment="Center"
+                TextColor="{StaticResource TextSecondary}" />
+
+            <!-- Server URL Picker -->
+            <Frame Style="{StaticResource CardFrame}" Padding="16" Margin="0,8">
+                <VerticalStackLayout Spacing="12">
+
+                    <Label
+                        Text="Adresse du serveur"
+                        FontSize="13"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource Primary}" />
+
+                    <Picker
+                        x:Name="ServerPicker"
+                        Title="Choisir un serveur"
+                        SelectedIndexChanged="OnServerPickerChanged"
+                        TextColor="{StaticResource TextPrimary}" />
+
+                    <Entry
+                        x:Name="CustomUrlEntry"
+                        Placeholder="http://192.168.1.x:5000"
+                        IsVisible="False"
+                        Keyboard="Url"
+                        TextColor="{StaticResource TextPrimary}" />
+
+                    <!-- Status -->
+                    <Label
+                        x:Name="StatusLabel"
+                        FontSize="12"
+                        IsVisible="False"
+                        HorizontalTextAlignment="Center" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Buttons -->
+            <Button
+                x:Name="RetryButton"
+                Text="Tester et continuer"
+                BackgroundColor="{StaticResource Primary}"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="8"
+                HeightRequest="48"
+                Clicked="OnRetryClicked" />
+
+        </VerticalStackLayout>
+
+        <Button
+            Grid.Row="1"
+            x:Name="QuitButton"
+            Text="Quitter"
+            BackgroundColor="{StaticResource Error}"
+            TextColor="White"
+            CornerRadius="8"
+            HeightRequest="44"
+            Margin="0,0,0,16"
+            Clicked="OnQuitClicked" />
+
+    </Grid>
+</ContentPage>
